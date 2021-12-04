@@ -6,6 +6,11 @@ app = Flask(__name__)
 
 cache = {'time':time.gmtime(time.time()),'ip': "-"}
 
+
+@app.route("/json")
+def getGson():
+    return cache
+
 @app.route("/create")
 def create():
     cache['time'] = 0
