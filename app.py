@@ -11,13 +11,13 @@ cache = {'time':time.gmtime(time.time()),'ip': "-"}
 def getGson():
     return cache
 
-@app.route("/create")
-def create():
+@app.route("/setzero")
+def setzero():
     cache['time'] = 0
     return jsonify(cache['time'])
 
 @app.route("/time")
-def increment():
+def time():
     cache['time'] = time.gmtime(time.time())
     cache['ip'] = request.remote_addr
     return ""
